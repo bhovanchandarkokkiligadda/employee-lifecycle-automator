@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Facilities Administrator - handles workspace and equipment setup</description>
+        <elevated_privilege>false</elevated_privilege>
+        <federated_id>loDzZeiHakrUyNszEu0Nangoy65SIJts4Y/WbRFbcu4=</federated_id>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_2177382_employee.facilities_admin</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>facilities_admin</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-19 10:19:12</sys_created_on>
+        <sys_id>e2a040eb3cb540f1a34151ba31490b33</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2177382_employee.facilities_admin</sys_name>
+        <sys_package display_value="Employee Lifecycle Automator" source="x_2177382_employee">c4a43aaf930e4710265ff04bdd03d6d2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Lifecycle Automator">c4a43aaf930e4710265ff04bdd03d6d2</sys_scope>
+        <sys_update_name>sys_user_role_e2a040eb3cb540f1a34151ba31490b33</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-19 10:19:12</sys_updated_on>
+    </sys_user_role>
+</record_update>

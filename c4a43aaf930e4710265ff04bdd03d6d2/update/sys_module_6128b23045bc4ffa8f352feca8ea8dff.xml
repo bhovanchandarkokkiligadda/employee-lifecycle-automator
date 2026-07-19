@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "serialNumber": "urn:uuid:acb7e3be-2232-4f32-8395-3a467fcbf497",
+  "metadata": {
+    "timestamp": "2026-07-19T10:36:29.514Z",
+    "tools": {
+      "components": [
+        {
+          "type": "library",
+          "name": "sdk-build-plugins",
+          "group": "@servicenow",
+          "version": "4.8.1",
+          "author": "ServiceNow"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "name": "x-2177382-employee-lifecycle-automator",
+      "version": "1.0.0",
+      "bom-ref": "pkg:servicenow/x-2177382-employee-lifecycle-automator@1.0.0?sys_scope_id=c4a43aaf930e4710265ff04bdd03d6d2",
+      "description": "[BUILD AGENT GENERATED]:  Automated Employee Onboarding and Offboarding System that streamlines employee lifecycle management through catalog-driven requests, automated task assignments via Flow Designer, role-based security, SLA monitoring, and real-time dashboards for HR visibility and compliance.",
+      "licenses": [
+        {
+          "license": {
+            "name": "UNLICENSED"
+          }
+        }
+      ],
+      "purl": "pkg:servicenow/x-2177382-employee-lifecycle-automator@1.0.0?sys_scope_id=c4a43aaf930e4710265ff04bdd03d6d2"
+    }
+  },
+  "components": [],
+  "dependencies": [
+    {
+      "ref": "pkg:servicenow/x-2177382-employee-lifecycle-automator@1.0.0?sys_scope_id=c4a43aaf930e4710265ff04bdd03d6d2"
+    }
+  ]
+}]]></content>
+        <external_source>false</external_source>
+        <path>x_2177382_employee/x-2177382-employee-lifecycle-automator/1.0.0/bom.json</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-19 10:19:10</sys_created_on>
+        <sys_id>6128b23045bc4ffa8f352feca8ea8dff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2177382_employee/x-2177382-employee-lifecycle-automator/1.0.0/bom.json</sys_name>
+        <sys_package display_value="Employee Lifecycle Automator" source="x_2177382_employee">c4a43aaf930e4710265ff04bdd03d6d2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Lifecycle Automator">c4a43aaf930e4710265ff04bdd03d6d2</sys_scope>
+        <sys_update_name>sys_module_6128b23045bc4ffa8f352feca8ea8dff</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-19 10:19:10</sys_updated_on>
+    </sys_module>
+</record_update>

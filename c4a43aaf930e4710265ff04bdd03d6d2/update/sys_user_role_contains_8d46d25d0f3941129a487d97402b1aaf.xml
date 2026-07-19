@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="x_2177382_employee.hr_admin" name="x_2177382_employee.hr_admin">a9fc06d64cac466fb4232d33f0bbf708</contains>
+        <role display_value="x_2177382_employee.lifecycle_manager" name="x_2177382_employee.lifecycle_manager">ea47874bff124be381fc8c2f49eec0ec</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-19 10:19:12</sys_created_on>
+        <sys_id>8d46d25d0f3941129a487d97402b1aaf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2177382_employee.hr_admin.</sys_name>
+        <sys_package display_value="Employee Lifecycle Automator" source="x_2177382_employee">c4a43aaf930e4710265ff04bdd03d6d2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Lifecycle Automator">c4a43aaf930e4710265ff04bdd03d6d2</sys_scope>
+        <sys_update_name>sys_user_role_contains_8d46d25d0f3941129a487d97402b1aaf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-19 10:19:12</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>

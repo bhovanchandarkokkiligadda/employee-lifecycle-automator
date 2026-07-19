@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[import { gs, GlideRecord } from '@servicenow/glide';
+export function preventDuplicateRequests(current, previous) {
+    const employeeName = current.getValue('employee_name');
+    const requestType = current.getValue('request_type');
+    // Check for existing active requests (not completed or rejected) for the same employee and request type
+    const gr = new GlideRecord('x_2177382_employee_lifecycle');
+    gr.addQuery('employee_name', employeeName);
+    gr.addQuery('request_type', requestType);
+    gr.addQuery('status', 'NOT IN', 'completed,rejected');
+    gr.addQuery('sys_id', '!=', current.getUniqueValue());
+    gr.query();
+    if (gr.hasNext()) {
+        gs.addErrorMessage('A duplicate ' + requestType + ' request already exists for this employee. Please check existing requests before submitting a new one.');
+        current.setAbortAction(true);
+    }
+}
+]]></content>
+        <external_source>false</external_source>
+        <path>x_2177382_employee/x-2177382-employee-lifecycle-automator/1.0.0/src/server/business-rules/prevent-duplicate-requests.ts</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-19 10:37:50</sys_created_on>
+        <sys_id>a47b52baf4bc428992157682001490e6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2177382_employee/x-2177382-employee-lifecycle-automator/1.0.0/src/server/business-rules/prevent-duplicate-requests.ts</sys_name>
+        <sys_package display_value="Employee Lifecycle Automator" source="x_2177382_employee">c4a43aaf930e4710265ff04bdd03d6d2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Lifecycle Automator">c4a43aaf930e4710265ff04bdd03d6d2</sys_scope>
+        <sys_update_name>sys_module_a47b52baf4bc428992157682001490e6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-19 10:37:50</sys_updated_on>
+    </sys_module>
+</record_update>

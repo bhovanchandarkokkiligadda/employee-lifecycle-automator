@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="f4d0cb27930a0710265ff04bdd03d649" label="Employee Lifecycle" max_length="40" name="x_2177382_employee_lifecycle" type="collection">
+        <element label="Number" max_length="40" name="number" read_only="true" read_only_option="instance_configured" type="string"/>
+        <element choice="3" default="onboarding" label="Request Type" mandatory="true" max_length="40" name="request_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Onboarding" sequence="0" value="onboarding"/>
+                <element inactive_on_update="false" label="Offboarding" sequence="1" value="offboarding"/>
+            </choice>
+        </element>
+        <element label="Comments" max_length="4000" name="comments" type="string"/>
+        <element label="Department" mandatory="true" max_length="32" name="department" reference="cmn_department" type="reference"/>
+        <element label="Exit Date" max_length="40" name="exit_date" type="glide_date"/>
+        <element label="Assets Required" max_length="1000" name="assets_required" type="string"/>
+        <element display="true" label="Employee ID" mandatory="true" max_length="40" name="employee_id" type="string"/>
+        <element label="Manager" mandatory="true" max_length="32" name="manager" reference="sys_user" type="reference"/>
+        <element label="Access Details" max_length="1000" name="access_details" type="string"/>
+        <element label="Employee Name" mandatory="true" max_length="32" name="employee_name" reference="sys_user" type="reference"/>
+        <element label="Joining Date" max_length="40" name="joining_date" type="glide_date"/>
+        <element choice="3" default="new" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="In Progress" sequence="3" value="in_progress"/>
+                <element inactive_on_update="false" label="Approved" sequence="2" value="approved"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
+                <element inactive_on_update="false" label="Completed" sequence="4" value="completed"/>
+                <element inactive_on_update="false" label="Pending Approval" sequence="1" value="pending_approval"/>
+                <element inactive_on_update="false" label="Rejected" sequence="5" value="rejected"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="department"/>
+        </index>
+        <index name="index2">
+            <element name="employee_name"/>
+        </index>
+        <index name="index3">
+            <element name="manager"/>
+        </index>
+    </element>
+</database>

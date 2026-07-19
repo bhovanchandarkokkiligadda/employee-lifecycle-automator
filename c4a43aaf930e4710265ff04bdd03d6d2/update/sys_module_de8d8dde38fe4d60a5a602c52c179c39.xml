@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[import { gs } from '@servicenow/glide';
+export function preventStatusRegression(current, previous) {
+    const statusOrder = {
+        'new': 0,
+        'pending_approval': 1,
+        'approved': 2,
+        'in_progress': 3,
+        'completed': 4,
+        'rejected': 5
+    };
+    const currentStatus = current.getValue('status');
+    const previousStatus = previous.getValue('status');
+    // Allow any transition to "rejected" from any state
+    if (currentStatus === 'rejected') {
+        return;
+    }
+    const currentOrder = statusOrder[currentStatus] ?? -1;
+    const previousOrder = statusOrder[previousStatus] ?? -1;
+    // Prevent moving backwards (except to rejected)
+    if (currentOrder < previousOrder && previousStatus !== 'rejected') {
+        gs.addErrorMessage('Cannot revert status from "' + previousStatus + '" to "' + currentStatus + '". Status can only move forward.');
+        current.setAbortAction(true);
+    }
+}
+]]></content>
+        <external_source>false</external_source>
+        <path>x_2177382_employee/x-2177382-employee-lifecycle-automator/1.0.0/src/server/business-rules/prevent-status-regression.ts</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-19 10:19:10</sys_created_on>
+        <sys_id>de8d8dde38fe4d60a5a602c52c179c39</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2177382_employee/x-2177382-employee-lifecycle-automator/1.0.0/src/server/business-rules/prevent-status-regression.ts</sys_name>
+        <sys_package display_value="Employee Lifecycle Automator" source="x_2177382_employee">c4a43aaf930e4710265ff04bdd03d6d2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Lifecycle Automator">c4a43aaf930e4710265ff04bdd03d6d2</sys_scope>
+        <sys_update_name>sys_module_de8d8dde38fe4d60a5a602c52c179c39</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-19 10:19:10</sys_updated_on>
+    </sys_module>
+</record_update>

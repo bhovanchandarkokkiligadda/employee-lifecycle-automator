@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[import { gs, GlideDateTime } from '@servicenow/glide';
+export function validateLifecycleRequest(current, previous) {
+    const requestType = current.getValue('request_type');
+    const today = new GlideDateTime();
+    if (requestType === 'onboarding') {
+        const joiningDate = current.getValue('joining_date');
+        if (joiningDate) {
+            const joinGDT = new GlideDateTime(joiningDate);
+            if (joinGDT.before(today)) {
+                gs.addErrorMessage('Joining date cannot be in the past');
+                current.setAbortAction(true);
+            }
+        }
+    }
+    else if (requestType === 'offboarding') {
+        const exitDate = current.getValue('exit_date');
+        if (exitDate) {
+            const exitGDT = new GlideDateTime(exitDate);
+            if (exitGDT.before(today)) {
+                gs.addErrorMessage('Exit date cannot be in the past');
+                current.setAbortAction(true);
+            }
+        }
+    }
+}
+]]></content>
+        <external_source>false</external_source>
+        <path>x_2177382_employee/x-2177382-employee-lifecycle-automator/1.0.0/src/server/business-rules/validate-lifecycle-request.ts</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-19 10:19:10</sys_created_on>
+        <sys_id>3fac90442887488fb6dbe923704c03fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2177382_employee/x-2177382-employee-lifecycle-automator/1.0.0/src/server/business-rules/validate-lifecycle-request.ts</sys_name>
+        <sys_package display_value="Employee Lifecycle Automator" source="x_2177382_employee">c4a43aaf930e4710265ff04bdd03d6d2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Lifecycle Automator">c4a43aaf930e4710265ff04bdd03d6d2</sys_scope>
+        <sys_update_name>sys_module_3fac90442887488fb6dbe923704c03fe</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-19 10:19:10</sys_updated_on>
+    </sys_module>
+</record_update>

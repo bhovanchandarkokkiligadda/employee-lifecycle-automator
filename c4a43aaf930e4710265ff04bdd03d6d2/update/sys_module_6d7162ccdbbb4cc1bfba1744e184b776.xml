@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[import { GlideRecord } from '@servicenow/glide';
+export function generateNumber(current, previous) {
+    // Generate auto-number with prefix ELC followed by a padded sequence
+    const gr = new GlideRecord('x_2177382_employee_lifecycle');
+    gr.orderByDesc('sys_created_on');
+    gr.setLimit(1);
+    gr.query();
+    let nextNumber = 1;
+    if (gr.next()) {
+        const lastNumber = gr.getValue('number');
+        if (lastNumber) {
+            const numPart = lastNumber.replace('ELC', '');
+            const parsed = parseInt(numPart, 10);
+            if (!isNaN(parsed)) {
+                nextNumber = parsed + 1;
+            }
+        }
+    }
+    // Pad with zeros to 7 digits (e.g., ELC0000001)
+    const paddedNumber = String(nextNumber).padStart(7, '0');
+    current.setValue('number', 'ELC' + paddedNumber);
+}
+]]></content>
+        <external_source>false</external_source>
+        <path>x_2177382_employee/x-2177382-employee-lifecycle-automator/1.0.0/src/server/business-rules/generate-number.ts</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-19 10:37:50</sys_created_on>
+        <sys_id>6d7162ccdbbb4cc1bfba1744e184b776</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2177382_employee/x-2177382-employee-lifecycle-automator/1.0.0/src/server/business-rules/generate-number.ts</sys_name>
+        <sys_package display_value="Employee Lifecycle Automator" source="x_2177382_employee">c4a43aaf930e4710265ff04bdd03d6d2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Lifecycle Automator">c4a43aaf930e4710265ff04bdd03d6d2</sys_scope>
+        <sys_update_name>sys_module_6d7162ccdbbb4cc1bfba1744e184b776</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-19 10:37:50</sys_updated_on>
+    </sys_module>
+</record_update>

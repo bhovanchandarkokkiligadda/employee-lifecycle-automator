@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_tab">
+    <par_dashboard_tab action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <background_color/>
+        <dashboard display_value="Employee Lifecycle Dashboard">1288bda574e742b2beb07e4b9ffdf2cb</dashboard>
+        <name>Performance &amp; SLA</name>
+        <order>1</order>
+        <sys_class_name>par_dashboard_tab</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-19 10:37:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1f457aac9c9e4ec989915195ff42a4e8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Performance &amp; SLA</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Lifecycle Automator" source="x_2177382_employee">c4a43aaf930e4710265ff04bdd03d6d2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Employee Lifecycle Automator">c4a43aaf930e4710265ff04bdd03d6d2</sys_scope>
+        <sys_update_name>par_dashboard_tab_1f457aac9c9e4ec989915195ff42a4e8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-19 10:37:47</sys_updated_on>
+    </par_dashboard_tab>
+</record_update>
